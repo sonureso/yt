@@ -13,8 +13,9 @@ SUBTITLE_FILE = OUTPUT_DIR / "voiceover.srt"
 
 # VOICE = "en-US-JennyNeural"
 VOICE = "hi-IN-SwaraNeural"
-# VOICE = "hi-IN-MadhurNeural"
+# VOICE = "hi-IN-MadhurNeural"  
 RATE = "+20%"
+WPS = 2.08 * 1.2
 VOLUME = "+0%"
 PITCH = "+3Hz"
 
@@ -64,7 +65,7 @@ def srt_timestamp(seconds: float):
     ms = int((seconds - int(seconds)) * 1000)
     return f"{hrs:02}:{mins:02}:{secs:02},{ms:03}"
 
-def estimate_srt_blocks(blocks, wps=2.6):
+def estimate_srt_blocks(blocks, wps=WPS):
     entries = []
     current_time = 0.0
 
